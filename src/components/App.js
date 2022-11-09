@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { Container } from '@mui/material';
 
 import BasketList from './BasketList';
 import GoodsList from './GoodsList';
 import Search from './Search';
-
+import Header from './Header';
 import { goods } from '../data/goods';
 
 const App = () => {
@@ -70,8 +71,11 @@ const App = () => {
     };
 
     return (
-        <div className='App'>
-            <div className='container'>
+        <>
+        <Header />
+        <Container
+            sx={{mt: '1rem'}}
+        >
                 <Search
                     value={search}
                     onChange={handleChange}
@@ -84,8 +88,8 @@ const App = () => {
                     order={order}
                     setOrder={removeFromOrder}
                 />
-            </div>
-        </div>
+        </Container>
+        </>
     );
 }
 
