@@ -1,7 +1,8 @@
 import React from 'react';
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, IconButton, Toolbar, Typography,Badge } from '@mui/material';
 import { ShoppingBasket } from '@mui/icons-material';
-function Header() {
+
+function Header({handleCart, orderLen}) {
   return (
     <AppBar position="static">
         <Toolbar>
@@ -14,9 +15,14 @@ function Header() {
             </Typography>
             <IconButton
               color="inherit"
-              
+              onClick={handleCart}
             >
+              <Badge
+              color="secondary"
+              badgeContent={orderLen}
+              >
                 <ShoppingBasket/>
+              </Badge>
             </IconButton>
         </Toolbar>
     </AppBar>

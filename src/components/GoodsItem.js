@@ -32,8 +32,9 @@ const GoodsItem = (props) => {
                     >
                     Цена: {price} руб.
                     </Typography>
-                        <CardActions>
+                        <CardActions >
                             <Button
+                            
                                 variant="contained"
                                 onClick={() =>
                                     setOrder({
