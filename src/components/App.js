@@ -35,10 +35,8 @@ const App = () => {
         );
 
         if (indexInOrder > -1) {
-            console.log(order);
             quantity = order[indexInOrder].quantity + 1;
 
-            console.log(order);
             setOrder(order.map((item) => {
                     if (item.id !== goodsItem.id) return item;
 
@@ -48,7 +46,6 @@ const App = () => {
                         price: item.price,
                         quantity,
                     };
-                    console.log(order);
                 }),
             );
         } else {
@@ -66,11 +63,8 @@ const App = () => {
         setSnackOpen(true); 
     };
 
-    const removeFromOrder = (goodsItem) => {        
-        debugger;
-        console.log(Array.isArray(order));
+    const removeFromOrder = (goodsItem) => {   
         setOrder(order.filter((item) => item.id !== goodsItem));
-        console.log(order);
     };
 
     return (
